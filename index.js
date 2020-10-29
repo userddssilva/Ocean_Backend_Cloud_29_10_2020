@@ -60,14 +60,9 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-<<<<<<< HEAD
 /*
 const db = client.db('ocean_backend_27_10_2020');
 const mensagens = db.collection('mensagens');
-=======
-//const db = client.db('ocean_backend_27_10_2020');
-//const mensagens = db.collection('mensagens');
->>>>>>> acd1abad2dcaeaa4d6a1982af8f93f8ff8960a1f
 
 // Read all
 /*
@@ -127,10 +122,6 @@ app.delete('/mensagem/:id', async function (req, res) {
     res.send(`A mensagem de ID ${id} foi removida com sucesso.`);
 });
 */
-<<<<<<< HEAD
-=======
-
->>>>>>> acd1abad2dcaeaa4d6a1982af8f93f8ff8960a1f
 app.listen(port, function () {
     console.info('App rodando em http://localhost:' + port);
 });
