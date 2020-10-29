@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 const ObjectId = mongodb.ObjectId;
 
+//https://ocean-backend-29-10-2020-forkd.herokuapp.com/
+
 (async () => {
 
 const connectionString = 'mongodb://localhost:27017';
@@ -13,13 +15,13 @@ const options = {
     useUnifiedTopology: true
 };
 
-const client = await mongodb.MongoClient.connect(connectionString, options);
+//const client = await mongodb.MongoClient.connect(connectionString, options);
 
 console.info('MongoDB conectado com sucesso!');
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Precisamos avisar o Express para utilizar o body-parser
 // Assim, ele saberá como transformar as informações no BODY da requisição
@@ -58,6 +60,7 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
+/*
 const db = client.db('ocean_backend_27_10_2020');
 const mensagens = db.collection('mensagens');
 
@@ -117,7 +120,7 @@ app.delete('/mensagem/:id', async function (req, res) {
 
     res.send(`A mensagem de ID ${id} foi removida com sucesso.`);
 });
-
+*/
 app.listen(port, function () {
     console.info('App rodando em http://localhost:' + port);
 });
